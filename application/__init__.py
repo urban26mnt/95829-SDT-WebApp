@@ -33,7 +33,7 @@ def eval_review():
     response =  requests.get(url, json=json.dumps(review))
 
     result = json.loads(response.text)
-    result_msg = f"{result['sentiment']} sentiment, with a predicted probability of {result['predict_proba']}"
+    result_msg = f"{result['sentiment']} sentiment, with a positive predicted probability of {result['predict_proba']}"
 
     #send input values and prediction result to index.html for display
     return render_template("home.html", review = review,  results=result_msg)
