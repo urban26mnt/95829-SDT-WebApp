@@ -33,5 +33,4 @@ def eval_review():
     response =  requests.get(url, json=json.dumps(review))
 
     #send input values and prediction result to index.html for display
-    return render_template("index.html", review = review,  results=response.text)
-  
+    return render_template("home.html", review = review,  results=response.text)
