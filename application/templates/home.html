@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Review Sentiment</title>
+ </head>
+<body>
+        <h2>Welcome to Movie Review Sentiment App</h2>
+        <h3>Enter review text</h3>
+        <form action = "{{ url_for('eval_review') }}" method="POST">
+            <table border="1" style="border-color:gray; border-collapse:collapse;" cellpadding="5" cellspacing="5">
+                <tr>
+                    <td><h4>Input Movie Review</h4> 
+                    <input type="text" name="review" > </td>             
+                </tr>
+            </table>
+            <!-- <input type="hidden" id="forminput" name="forminput"  >    -->        
+            <p><input type="submit" value="Predict sentiment"></p>
+             {% if (results) %} 
+             <h3> Sentiment prediction: {{ results }}  </h3>
+             <p> for following feature: </p>
+             <p> Input movie review: {{review}} </p>
+             {% endif %} 
+        </form>
+</body>
+</html>
