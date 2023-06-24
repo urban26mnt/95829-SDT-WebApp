@@ -21,7 +21,7 @@ def index():
 
 #decorator to access the service
 @app.route("/eval_review", methods=['GET', 'POST'])
-def reviewclassify():
+def eval_review():
 
     #extract form inputs
     review = request.form.get("review")
